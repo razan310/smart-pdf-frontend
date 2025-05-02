@@ -17,7 +17,7 @@ export default function UploadForm({ onExtractedData }) {
     try {
         
       const res = await axios.post(
-        `https://smart-pdf-backend-1.onrender.com/parse-pdf`, // ✅ استخدم env بدل الرابط الصريح
+        `https://smart-pdf-backend-1.onrender.com/parse-pdf`, 
         formData,
         {
           headers: {

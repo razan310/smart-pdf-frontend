@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# 🖼️ Smart PDF Parser – Frontend (Next.js)
 
-First, run the development server:
+This is the frontend interface for the Smart PDF Property Parser.  
+Built with **Next.js**, it allows users to upload real estate brochure PDFs and extract structured property data using the AI-powered backend.
+
+> GitHub Repo: [razan310/smart-pdf-frontend](https://github.com/razan310/smart-pdf-frontend)
+
+---
+
+## 🚀 Features
+
+- 📤 Upload PDF files via form
+- 🔁 Handles file conversion and error states
+- 🌐 Sends data to the FastAPI backend for processing
+- 📊 Displays extracted property fields in a structured format
+- ⚡ Built with Tailwind CSS and Axios
+
+---
+
+## 🛠️ Tech Stack
+
+- **Next.js** – React framework for frontend UI
+- **Tailwind CSS** – Utility-first styling
+- **Axios** – API requests
+- **Vercel** – Deployment platform
+- **FastAPI Backend** – Receives and processes uploaded PDFs
+
+---
+
+## 📦 Getting Started (Local Setup)
 
 ```bash
+# 1. Clone the repo
+git clone https://github.com/razan310/smart-pdf-frontend.git
+cd smart-pdf-frontend
+
+# 2. Install dependencies
+npm install
+
+# 3. Set up environment variables
+echo "NEXT_PUBLIC_API_URL=https://smart-pdf-backend-1.onrender.com" > .env.local
+
+# 4. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📁 File Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `components/UploadForm.js` – Component to handle PDF upload and API interaction
+- `app/page.js` – Main page displaying upload UI and extracted data grid
+- `.env.local` – Contains backend URL for deployment
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🖼️ Main Page Overview
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- File: `app/page.js`
+- Displays a title and upload form
+- When a PDF is uploaded, sends it to the backend
+- Shows extracted fields in a responsive grid
+- Each field has a label (in uppercase) and its value
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌐 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Deployed on [Vercel](https://vercel.com)
+- Automatically connected to GitHub for continuous deployment
+- Add `NEXT_PUBLIC_API_URL` as a protected environment variable in the Vercel dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🔗 Backend API Used
+
+**POST /parse-pdf**  
+URL: `https://smart-pdf-backend-1.onrender.com/parse-pdf`
+
+- Accepts: `multipart/form-data` with a PDF file
+- Returns: JSON object with extracted property fields
+
+---
+
+## 🧠 Example JSON Output
+
+```json
+{
+  "property_name": "Bugatti Residences",
+  "developer": "Binghatti",
+  "location": "Downtown Dubai",
+  "bedrooms": "2",
+  "area": "1500 sqft"
+}
+```
+
+---
+
+## 📄 License
+
+This project is open-source and licensed under the MIT License.

@@ -68,7 +68,7 @@ npm run dev
 
 - Deployed on [Vercel](https://vercel.com)
 - Automatically connected to GitHub for continuous deployment
-- Add `NEXT_PUBLIC_API_URL` as a protected environment variable in the Vercel dashboard
+
 
 ---
 

@@ -51,7 +51,6 @@ npm run dev
 
 - `components/UploadForm.js` – Component to handle PDF upload and API interaction
 - `app/page.js` – Main page displaying upload UI and extracted data grid
-- `.env.local` – Contains backend URL for deployment
 
 ---
 
